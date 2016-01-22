@@ -37,9 +37,9 @@ import java.util.ArrayList;
 @Singleton
 public class ApplicationController {
 
-    public Result index() {
+  /*  public Result index() {
         return Results.html();
-    }
+    } */
 
    public Result acesUp() {
 
