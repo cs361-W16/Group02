@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Deck {
     private ArrayList<Card> cards;
 
-    Deck()
+    public Deck()
     {
         cards = new ArrayList<Card>();
         int index_1, index_2;
