@@ -23,6 +23,9 @@ public class Game {
         col4.addCard(deck.drawFromDeck());
 
     }
+    public void Remove(){
 
+
+    }
 
 }

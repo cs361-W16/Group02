@@ -150,7 +150,9 @@ public class ApplicationController {
         }
         //Col 1 remove
         else if(button == 2){
-
+            if(can_remove(a,b)) {           //Using Taylor's function to compare cards
+                col1.remove( 0 );              //Needs parameter for the card on top
+            }
         }
         //Col 2 Move
         else if(button == 3){
@@ -158,7 +160,9 @@ public class ApplicationController {
         }
         //Col 2 remove
         else if(button == 4){
-
+            if(can_remove(a,b)) {
+                col2.remove( 0 );
+            }
         }
         //Col 3 Move
         else if(button == 5){
@@ -166,7 +170,9 @@ public class ApplicationController {
         }
         //Col 3 remove
         else if(button == 6){
-
+            if(can_remove(a,b)) {
+                col3.remove( 0 );
+            }
         }
         //Col 4 Move
         else if(button == 7){
@@ -174,7 +180,9 @@ public class ApplicationController {
         }
         //Col 4 remove
         else if(button == 8){
-
+            if(can_remove(a,b)) {
+                col4.remove( 0 );
+            }
         }
 
             return result;
