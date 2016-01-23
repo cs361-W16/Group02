@@ -32,7 +32,6 @@ import ninja.Results;
 
 import ninja.params.Param;
 import ninja.params.PathParam;
-
 import java.util.ArrayList;
 
 
@@ -49,8 +48,9 @@ public class ApplicationController {
     }
     public Result userInput(@PathParam("input") Integer button ){
         Result result = Results.html().template("views/AcesUp/AcesUp.flt.html");
-//
-        Card blankCard = new Card(4, 15);
+
+//        Game game1 = new Game();               //Error is showing up
+//        Card blankCard = new Card(4, 15);
         Deck deck = new Deck();
         Col col1 = new Col();
         Col col2 = new Col();
@@ -138,13 +138,29 @@ public class ApplicationController {
 
            // return result;
         }
+
+/**
+ * Created by Brandon To on 1/21/2016.
+ * This section covers various conditions comparing the cards (using can_remove)
+ * between the columns two at a time. It then uses the ArrayList format of
+ * remove to take off the top element of the array.
+ */
         //Col 1 Move
         else if(button == 1){
 
         }
         //Col 1 remove
         else if(button == 2){
-
+            if(game.can_remove(col1.col.get(col1.col.size()-1),col2.col.get(col2.col.size()-1))) { //Using Taylor's function to compare cards
+//              col1 = ArrayUtils.removeElement(col1.col, 0); //Having issues accessing value in ArrayList
+                col1.col.remove(col1.col.size()-1);         //Currently removes first element. Need to remove last.
+            }
+            else if(game.can_remove(col1.col.get(col1.col.size()-1),col3.col.get(col3.col.size()-1))) {
+                col1.col.remove(col1.col.size()-1);
+            }
+            else if(game.can_remove(col1.col.get(col1.col.size()-1),col4.col.get(col4.col.size()-1))) {
+                col1.col.remove(0);
+            }
         }
         //Col 2 Move
         else if(button == 3){
@@ -152,7 +168,15 @@ public class ApplicationController {
         }
         //Col 2 remove
         else if(button == 4){
-
+            if(game.can_remove(col2.col.get(col2.col.size()-1),col1.col.get(col1.col.size()-1))) {
+                col2.col.remove(0);
+            }
+            else if(game.can_remove(col2.col.get(col2.col.size()-1),col3.col.get(col3.col.size()-1))) {
+                col2.col.remove(0);
+            }
+            else if(game.can_remove(col2.col.get(col2.col.size()-1),col4.col.get(col4.col.size()-1))) {
+                col2.col.remove(0);
+            }
         }
         //Col 3 Move
         else if(button == 5){
@@ -160,7 +184,15 @@ public class ApplicationController {
         }
         //Col 3 remove
         else if(button == 6){
-
+            if(game.can_remove(col3.col.get(col3.col.size()-1),col1.col.get(col1.col.size()-1))) {
+                col3.col.remove(col3.col.size()-1);
+            }
+            else if(game.can_remove(col3.col.get(col3.col.size()-1),col2.col.get(col2.col.size()-1))) {
+                col3.col.remove(col3.col.size()-1);
+            }
+            else if(game.can_remove(col3.col.get(col3.col.size()-1),col4.col.get(col4.col.size()-1))) {
+                col3.col.remove(col3.col.size()-1);
+            }
         }
         //Col 4 Move
         else if(button == 7){
@@ -168,15 +200,17 @@ public class ApplicationController {
         }
         //Col 4 remove
         else if(button == 8){
-
+            if(game.can_remove(col4.col.get(col4.col.size()-1),col1.col.get(col1.col.size()-1))) {
+                col4.col.remove(col4.col.size()-1);
+            }
+            else if(game.can_remove(col4.col.get(col4.col.size()-1),col2.col.get(col2.col.size()-1))) {
+                col4.col.remove(col4.col.size()-1);
+            }
+            else if(game.can_remove(col4.col.get(col4.col.size()-1),col3.col.get(col3.col.size()-1))) {
+                col4.col.remove(col4.col.size()-1);
+            }
         }
-
         return result;
         //   return Results.html().template("views/testview/testview.ftl.html");
     }
-
-
-
-
-
 }

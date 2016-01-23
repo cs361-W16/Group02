@@ -53,6 +53,7 @@ public class Game {
         return false;
     }
 
+
     // It will grab the index of the last element in the array. Then "temp" will grab the value
     // of the element of the array. Finally, store that value to destination column which supposedly empty.
     public static void moveCard (ArrayList<Card> cardSource, ArrayList<Card> cardDestination) {
