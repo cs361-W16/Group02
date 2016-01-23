@@ -6,8 +6,7 @@ import java.util.ArrayList;
  * Created by Cameron, Taylor, Jonathan and Brandom on 1/22/2016.
  */
 public class Game {
-
-
+    
     public Deck deck = new Deck();
 
     public Col col1 = new Col();
