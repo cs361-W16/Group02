@@ -79,6 +79,7 @@ public class GameTest {
         Game game = new Game(deck, col1, col2, col3, col4);
         assertEquals(true, game.compare_face(13,8,"g"));
     }
+
     @Test
     public void testFirstNumBiggerFalse(){
         Deck deck = new Deck();
@@ -156,4 +157,17 @@ public class GameTest {
         assertEquals(false, game.can_remove(threeclubs,fourspades));
     }
 // End Compare portion tests ---------------------------------------------
+@Test
+public void testModelExists() {
+    Move mov = new Move();
+    assertNotNull(mov);
+}
+
+    @Test
+    public void testEqualSuitMove(){
+        Move mov = new Move();
+        assertArrayEquals(new int[]{1,2,3},new int[]{1,2,3});
     }
+
+
+}
