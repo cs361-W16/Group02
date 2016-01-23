@@ -24,13 +24,22 @@ public class Col {
 
     public int sizeOfCol(){ return col.size(); }
 
-    public void addCard(Card card){
-        col.add(card);
+    public void setCard(int index, Card card){
+        col.set(index, card);
     }
+    public void addCard(Card card){ col.add(card); };
 
     public Card getCard(int index){
+        Card card = new Card(4, 15);
+        if(col.get(index) == null){
+            return card;
+        }
+        else if(col.get(index) != card) {
+            return col.get(index);
+        }else{
+            return card;
+        }
 
-        return col.get(index);
     }
 
     public Card topCard(){
