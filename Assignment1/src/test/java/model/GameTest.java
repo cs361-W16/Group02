@@ -4,6 +4,7 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertNotNull;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
+import static org.junit.Assert.assertArrayEquals;
 
 /**
  * Created by Cameron on 1/22/2016.
@@ -53,6 +54,7 @@ public class GameTest {
         Game game = new Game();
         assertEquals(true, game.compare_face(13,8,"g"));
     }
+
     @Test
     public void testFirstNumBiggerFalse(){
         Game game = new Game();
@@ -93,4 +95,17 @@ public class GameTest {
         assertEquals(false, game.can_remove(tenspades,fivespades));
     }
 // End Compare portion tests ---------------------------------------------
+@Test
+public void testModelExists() {
+    Move mov = new Move();
+    assertNotNull(mov);
+}
+
+    @Test
+    public void testEqualSuitMove(){
+        Move mov = new Move();
+        assertArrayEquals(new int[]{1,2,3},new int[]{1,2,3});
     }
+
+
+}

@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 
 /**
- * Created by Cameron on 1/22/2016.
+ * Created by Cameron, Taylor, Jonathan and Brandom on 1/22/2016.
  */
 public class Game {
 
@@ -41,6 +41,25 @@ public class Game {
         col3.setCard(dealCount, deck.drawFromDeck());
         col4.setCard(dealCount, deck.drawFromDeck());
         dealCount++;
+    }
+
+    // It will check the size of the specified column array whether zero or not. This is used for
+    // finding which column is empty and can be filled with another card from another slot
+    public static boolean checkColumn(ArrayList<Card> CardArray) {
+        int cardSize = CardArray.size();
+        if (cardSize == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    // It will grab the index of the last element in the array. Then "temp" will grab the value
+    // of the element of the array. Finally, store that value to destination column which supposedly empty.
+    public static void moveCard (ArrayList<Card> cardSource, ArrayList<Card> cardDestination) {
+        int lastCardIndex = cardSource.size() - 1;
+        Card temp = cardSource.get(lastCardIndex);
+        cardDestination.add(temp);
+        // ** need one more step which is call remove function but still in development as I type this notes
     }
 
     // The two inputs should be the int values that represent the suits. Would work fine with the faces, if I ever needed to test equality.
@@ -93,4 +112,4 @@ public class Game {
     }
 }
 
-}
+
