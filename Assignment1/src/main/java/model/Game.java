@@ -60,7 +60,7 @@ public class Game {
         int lastCardIndex = cardSource.size() - 1;
         Card temp = cardSource.get(lastCardIndex);
         cardDestination.add(temp);
-        // ** need one more step which is call remove function but still in development as I type this notes
+        cardSource.remove(lastCardIndex);
     }
 
     // The two inputs should be the int values that represent the suits. Would work fine with the faces, if I ever needed to test equality.
