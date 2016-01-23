@@ -43,6 +43,16 @@ public class Game {
         dealCount++;
     }
 
+    // It will check the size of the specified column array whether zero or not. This is used for
+    // finding which column is empty and can be filled with another card from another slot
+    public static boolean checkColumn(ArrayList<Card> CardArray) {
+        int cardSize = CardArray.size();
+        if (cardSize == 0) {
+            return true;
+        }
+        return false;
+    }
+
     // The two inputs should be the int values that represent the suits. Would work fine with the faces, if I ever needed to test equality.
     // Yeah, this is pretty much a stock function, or method or whatever it is in Java.
     // This is called later in the greater compare function.
@@ -93,6 +103,6 @@ public class Game {
     }
 }
 
-    }
 
-}
+
+

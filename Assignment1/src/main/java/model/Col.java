@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Col {
 
-    private ArrayList<Card> col;
+    public ArrayList<Card> col;
 
 
      public Col(){
