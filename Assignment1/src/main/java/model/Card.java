@@ -8,8 +8,8 @@ public class Card
 {
     private int rank, suit;
 
-    private static String[] suits = { "H", "S", "D", "C" };
-    private static String[] ranks  = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
+    private static String[] suits = { "H", "S", "D", "C", "_" };
+    private static String[] ranks  = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "_" };
 
 
     public Card(int suit, int rank)
@@ -20,7 +20,7 @@ public class Card
 
     public @Override String toString()
     {
-        return ranks[rank] + " of " + suits[suit];
+        return ranks[rank] + suits[suit];
     }
 
     public int getRank() {
